@@ -1,0 +1,99 @@
+{% extends 'default2.html' %}
+
+{% block title %} Search {% endblock title %}
+
+{% block content %}
+
+{% if object_list %}
+
+<style>
+    .table-str {
+        padding-left: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: auto;
+        text-align: center;
+        max-height: auto;
+        max-width: auto;
+    }
+
+    .table-str1 {
+      padding-left: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: auto;
+      max-width: auto;
+    }
+</style>
+<table class="table table-str" border="2" >
+    <thead>
+       <tr>
+           <th scope="col">Заводской №</th>
+           <th scope="col">Модель техники</th>
+           <th scope="col">Модель двигателя</th>
+           <th scope="col">№ двигателя</th>
+           <th scope="col">Модель трансмиссии</th>
+           <!-- <th scope="col">№ трансмиссии</th>
+           <th scope="col">Модель ведущего моста</th>
+           <th scope="col">№ ведущего моста</th>
+           <th scope="col">Модель управляемого моста</th>
+           <th scope="col">№ управляемого моста</th> -->
+ 
+       </tr>
+    </thead>
+
+  {% for car in object_list %}
+  <tr> 
+    <th scope="row">{{ car.factory_number }}</th>
+    <th scope="row">{{ car.technique_model }}</th>
+    <th scope="row">{{ car.engine_model }}</th>
+    <th scope="row">{{ car.engine_number }}</th>
+    <th scope="row">{{ car.transmission_model }}</th>
+    <!-- <th scope="row">{{ car.transmission_number }}</th>
+    <th scope="row">{{ car.drive_axle_model }}</th>
+    <th scope="row">{{ car.drive_axle_number }}</th>
+    <th scope="row">{{ car.steerable_axle_model }}</th>
+    <th scope="row">{{ car.steerable_axle_number }}</th> -->
+</tr>
+</table>
+{% endfor %}
+<table class="table table-str1" border="2" >
+  <thead>
+     <tr>
+         <!-- <th scope="col">Заводской №</th>
+         <th scope="col">Модель техники</th>
+         <th scope="col">Модель двигателя</th>
+         <th scope="col">№ двигателя</th>
+         <th scope="col">Модель трансмиссии</th> -->
+         <th scope="col">№ трансмиссии</th>
+         <th scope="col">Модель ведущего моста</th>
+         <th scope="col">№ ведущего моста</th>
+         <th scope="col">Модель управляемого моста</th>
+         <th scope="col">№ управляемого моста</th>
+
+     </tr>
+  </thead>
+
+{% for car in object_list %}
+<tr> 
+  <!-- <th scope="row">{{ car.factory_number }}</th>
+  <th scope="row">{{ car.technique_model }}</th>
+  <th scope="row">{{ car.engine_model }}</th>
+  <th scope="row">{{ car.engine_number }}</th>
+  <th scope="row">{{ car.transmission_model }}</th> -->
+  <th scope="row">{{ car.transmission_number }}</th>
+  <th scope="row">{{ car.drive_axle_model }}</th>
+  <th scope="row">{{ car.drive_axle_number }}</th>
+  <th scope="row">{{ car.steerable_axle_model }}</th>
+  <th scope="row">{{ car.steerable_axle_number }}</th>
+</tr>
+</table>
+
+
+  {% endfor %}
+  {% else %}
+
+  <h4>...по Вашему запросу ничего не найдено :(</h4>
+
+{% endif %}
+{% endblock content %}

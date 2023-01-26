@@ -1,0 +1,423 @@
+<html  lang="ru" class="no-js lt-ie9">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% load static %}
+
+
+	<head>
+<title>СИЛАНТ</title>
+		 <style>
+
+
+
+:root {
+  --silant_black: #163E6C;
+  --silant_red: #D20A11;
+  --silant_beige: #EBE6D6;
+}
+
+@font-face {
+    font-family: 'PT-Astra-Sans_Regular';
+    src: local('PT-Astra-Sans_Regular'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'PT-Astra-Sans_Bold';
+    src: local('PT-Astra-Sans_Bold'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'PT-Astra-Sans_Bold-italic';
+    src: local('PT-Astra-Sans_Bold-italic'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Bold-italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'PT-Astra-Sans_Italic';
+    src: local('PT-Astra-Sans_Italic'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Italic.ttf') format('truetype');
+}
+
+html {
+  font-family: "PT-Astra-Sans_Regular";
+  font-size: 20px;
+  color: var(--silant_beige);
+  /* Нормализатор */
+  line-height: 2.15; /* Высота строки для всех браузеров */
+  -webkit-text-size-adjust: 100%; /* фикс размера шрифта в iOS при повороте экрана */
+  -ms-text-size-adjust: 100%; /* фикс размера шрифта в ms при повороте экрана */
+  -moz-text-size-adjust: 100%; /* фикс размера шрифта в mozilla при повороте экрана */
+  -ms-overflow-style: scrollbar; /* стандартные полосы прокрутки */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  /* убираем цвет подсветки ссылки при касании */
+  }
+
+header {
+	
+	max-height: fit-content;
+	margin-left: auto;
+	margin-top: auto;
+	padding: auto;
+	max-width: 90em;	
+	height: 7em;
+	margin-bottom: 2em;
+    padding: 10px;
+	border: #D20A11 20px;
+	
+}
+
+body {
+  /* max-width: fit-content; */
+    max-height: fit-content;
+    margin-left: auto;
+	margin-top: auto;
+	padding: auto;
+	max-width: 90em;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--silant_black);
+    /* text-align:; */
+    background-color: var(--silant_beige);
+} 
+
+footer {
+	max-height: fit-content;
+	margin-left: auto;
+	margin-top: auto;
+	max-width: 90em;
+	height: 120px;	
+	margin-bottom: 1cm;
+    padding: 10px; 
+	border: #D20A11 20px;
+}
+
+.frame_1 {
+	padding-right: 1em;
+	padding-top: 1em;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	max-width: 87em;
+	height: 7em;
+    outline: 2px solid #163E6C; 
+    border-radius: 5px; 
+}
+
+.frame {
+	margin-top: -1em;
+	padding-right: 1em;
+	margin-left:auto;
+	margin-right: auto;
+	margin-bottom: 3em;
+	max-width: 87em;
+	height: 19em;
+    outline: 2px solid #163E6C; 
+    border-radius: 5px; 
+}
+
+.frame2 {
+	margin-top: -3em;
+	padding-right: 1em;
+	padding-top: 2em;
+	margin-left:auto;
+	margin-right: auto;
+	max-width: 87em;
+	height: 6em;
+    outline: 2px solid #163E6C; 
+    border-radius: 5px; 
+}
+
+.bottom a {
+	color: #EBE6D6;
+	text-decoration:none;
+}
+
+.bottom1 a {
+
+	color: #EBE6D6;
+	text-decoration:none;
+}
+
+h2 {
+	color: var(--silant_black);
+}
+
+.h2 {
+	text-align: center
+}
+
+.h21 {
+	text-align: center
+}
+
+.h22 {
+	text-align: center
+}
+
+.form {
+	margin-left: auto;
+	margin-right: auto;
+}
+.logo-l {
+	margin-left: 3em;
+	
+			}
+
+.bottom {
+  background-color: #D20A11;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+  max-width: 300px;
+  border: 1px solid #D20A11;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.bottom1 {
+  
+  background-color: #D20A11;
+  margin-left: auto;
+  margin-top: -32px;
+  width: 200px;
+  border: 1px solid #D20A11;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+ h1, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; 
+}
+
+input::-webkit-input-placeholder {
+  color: #163E6C; 
+  font-style: 'PT-Astra-Sans_Bold'; 
+  font-size: 17px;
+  background: #EBE6D6;
+}
+
+input {
+	width: 300px;
+	height: 25px;
+}
+
+button {
+	margin-left:150px;
+	width: 80px;
+	height: 28px;
+	color: #EBE6D6; 
+    font-size: 17px;
+	background-color: #D20A11;
+	border-radius: 5px;
+	border-color: #D20A11;
+    align-items: center;
+}
+
+
+
+.clas2 {
+	
+    margin-left: 4em;
+    max-width: 300px;
+	margin-top: 15px;
+    border: 1px solid #D20A11;
+	background-color: #D20A11;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.bottom3 a {
+	color: #EBE6D6;
+	text-decoration:none;
+}
+
+.clas3 {
+	
+    margin-left: auto;
+	padding-left: 10px;
+	margin-top: -20px;
+    /* margin-bottom: auto; */ 
+    max-width: 200px;
+	height: 30px;
+    border: 1px solid #D20A11;
+    border-radius: 5px;
+	background-color: #D20A11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom4 a {
+	color: #EBE6D6;
+	text-decoration:none;
+}
+
+@media (max-width: 1164px) {
+	.frame2 {
+       height: 3em;}
+
+	.bottom {
+		display: none;
+	}   
+
+	.clas2 {
+		display: none;
+	}
+
+	.clas3 {
+	
+    margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	margin-top: -20px;
+    /* margin-bottom: auto; */ 
+    max-width: 200px;
+	height: 30px;
+    border: 1px solid #D20A11;
+    border-radius: 5px;
+	background-color: #D20A11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+@media (max-width: 648px) {
+	h2 {
+		font-size: 15px;
+	}
+
+    .bottom1 {
+		width: 120px;
+	}
+	 h3 {
+		font-size: 20px;
+	 }
+
+	h4 {
+		font-size: 15px;
+	} 
+
+	.frame {
+		min-width: 87em;
+	}
+}
+
+	/* max-height: fit-content; */
+	/* max-width: fit-content; */
+
+	/* margin-left: 44px;
+	width: 1550px;	height: 120px;
+    outline: 2px solid #163E6C;
+    border-radius: 5px; 
+	bottom: 3px;
+	margin-bottom: 1cm;
+    padding: 10px; 
+	border: #D20A11 20px;}
+
+} */
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+}
+
+		  </style>
+
+       
+</head>
+
+	<header>
+		<div class="frame_1">
+		<div class='div-elements'>
+     	   <div class="logo-l">
+		       <img src="{% static 'images/Fon.png' %}">
+		   </div>
+		   <div class='1class'><bottom class='bottom'><a href="https://t.me/NikName">+7-8352-20-12-09, telegramm</a>
+		       </bottom>
+		   </div>
+		   <div class='3class'><bottom class='bottom1'><a href="/sign/login/">Авторизация</a>
+		        </bottom>
+	       </div>
+	       <div class='h2'><h2>Электронная сервисная книжка "Мой Силант"</h2>
+		   </div>
+		</div>
+	</div>
+    </header>
+
+	<body>
+
+	<div class="frame"> 
+		<br>
+		<br>
+		<div class='h21'><h3>Прoверьте комплектацию и технические характеристики техники "Силант"</h3>
+			<br>
+		  <form action="{% url 'search_results' %}" method="get">
+			<input name="q" type="number" placeholder="Введите заводской номер" title="Вводить только число!" required>
+            <button type="submit">Поиск</button>
+		  </form>
+		</div>
+			
+			<br>
+		<div class='h22'>
+				<h4>Информация о комплектации и технических характеристиках Вашей техники</h4>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					{% block content %}
+					{{ flatpage.content }}
+					{% endblock content %}
+				</div>
+			</div>
+		</div>
+		
+		<p></p>
+		<p></p>
+	</div>
+
+	</body>
+
+	<footer>
+	<div class="frame2">
+		
+		    <div class='clas2'>
+			    <bottom class='bottom3'><a href="https://t.me/NikName">+7-8352-20-12-09, telegramm</a>
+		        </bottom>
+		    </div>
+		    <div class='clas3'>
+			    <bottom class='bottom4'><a href="https://silant.com/">Мой Силант 2023</a>
+			    </bottom>
+	       </div>
+		
+	</div>
+    </footer>
+	    <div>
+			   <a style="position: relative; left: 6em; top: -28px">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Shiryaev Konstantin
+	    </div>
+
+	
+
+
+</html>

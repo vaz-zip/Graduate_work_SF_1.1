@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>СИЛАНТ</title>
+        {% load static %}
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- <link href="{% static 'css/styles.css' %}" rel="stylesheet" /> -->
+        <title>СИЛАНТ</title>
+        <style>
+
+
+
+:root {
+ --silant_black: #163E6C;
+ --silant_red: #D20A11;
+ --silant_beige: #EBE6D6;
+}
+
+@font-face {
+   font-family: 'PT-Astra-Sans_Regular';
+   src: local('PT-Astra-Sans_Regular'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Regular.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'PT-Astra-Sans_Bold';
+   src: local('PT-Astra-Sans_Bold'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Bold.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'PT-Astra-Sans_Bold-italic';
+   src: local('PT-Astra-Sans_Bold-italic'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Bold-italic.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'PT-Astra-Sans_Italic';
+   src: local('PT-Astra-Sans_Italic'), url('/static/fonts/PT_Astra_Sans/PT-Astra-Sans_Italic.ttf') format('truetype');
+}
+
+html {
+ font-family: "PT-Astra-Sans_Regular";
+ font-size: 20px;
+ color: var(--silant_beige);
+ /* Нормализатор */
+ line-height: 2.15; /* Высота строки для всех браузеров */
+ -webkit-text-size-adjust: 100%; /* фикс размера шрифта в iOS при повороте экрана */
+ -ms-text-size-adjust: 100%; /* фикс размера шрифта в ms при повороте экрана */
+ -moz-text-size-adjust: 100%; /* фикс размера шрифта в mozilla при повороте экрана */
+ -ms-overflow-style: scrollbar; /* стандартные полосы прокрутки */
+ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  /* убираем цвет подсветки ссылки при касании */
+ }
+
+header {
+   
+   max-height: fit-content;
+   margin-left: auto;
+   margin-top: auto;
+   padding: auto;
+   max-width: 90em;	
+   height: 7em;
+   margin-bottom: 2em;
+   padding: 10px;
+   border: #D20A11 20px;
+   
+}
+
+body {
+ /* max-width: fit-content; */
+   max-height: fit-content;
+   margin-left: auto;
+   margin-top: auto;
+   padding: auto;
+   max-width: 90em;
+   font-size: 1rem;
+   line-height: 1.5;
+   color: var(--silant_black);
+   /* text-align:; */
+   background-color: var(--silant_beige);
+} 
+
+footer {
+   max-height: fit-content;
+   margin-left: auto;
+   margin-top: auto;
+   max-width: 90em;
+   height: 120px;	
+   margin-bottom: 1cm;
+   padding: 10px; 
+   border: #D20A11 20px;
+}
+
+.frame_1 {
+   padding-right: 1em;
+   padding-top: 1em;
+   margin-left:auto;
+   margin-right: auto;
+   margin-top: auto;
+   margin-bottom: auto;
+   max-width: 87em;
+   height: 7em;
+   outline: 2px solid #163E6C; 
+   border-radius: 5px; 
+}
+
+.frame {
+   margin-top: -1em;
+   padding-right: 1em;
+   margin-left:auto;
+   margin-right: auto;
+   margin-bottom: 3em;
+   max-width: 87em;
+   height: 19em;
+   outline: 2px solid #163E6C; 
+   border-radius: 5px; 
+}
+
+.frame2 {
+   margin-top: 10em;
+   padding-right: 1em;
+   padding-top: 2em;
+   margin-left:1em;
+   margin-right: auto;
+   max-width: 88em;
+   height: 6em;
+   outline: 2px solid #163E6C; 
+   border-radius: 5px; 
+}
+
+.bottom a {
+   color: #EBE6D6;
+   text-decoration:none;
+}
+
+.bottom1 a {
+
+   color: #EBE6D6;
+   text-decoration:none;
+}
+
+.author1 {
+
+    text-align: center;
+}
+
+.author2 {
+    padding-left: 9em;
+
+}
+
+.author2 li {
+    display: inline; 
+    padding: 5px 60px 5px 60px;
+
+    
+  
+
+
+}
+
+h2 {
+   color: var(--silant_black);
+}
+
+.h2 {
+   text-align: center
+}
+
+.h21 {
+   text-align: center
+}
+
+.h22 {
+   text-align: center
+}
+
+.form {
+   margin-left: auto;
+   margin-right: auto;
+}
+.logo-l {
+   margin-left: 3em;
+   
+           }
+
+.bottom {
+ background-color: #D20A11;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: -33px;
+ max-width: 300px;
+ border: 1px solid #D20A11;
+ border-radius: 5px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
+}
+
+.bottom1 {
+ 
+ background-color: #D20A11;
+ margin-left: auto;
+ margin-top: -32px;
+ width: 200px;
+ border: 1px solid #D20A11;
+ border-radius: 5px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
+}
+
+
+h1, h3, h4, h5, h6 {
+ margin-top: 0;
+ margin-bottom: 0.5rem; 
+}
+
+input::-webkit-input-placeholder {
+ color: #163E6C; 
+ font-style: 'PT-Astra-Sans_Bold'; 
+ font-size: 17px;
+ background: #EBE6D6;
+}
+
+input {
+   width: 300px;
+   height: 25px;
+}
+
+button {
+   margin-left:150px;
+   width: 80px;
+   height: 28px;
+   color: #EBE6D6; 
+   font-size: 17px;
+   background-color: #D20A11;
+   border-radius: 5px;
+   border-color: #D20A11;
+   align-items: center;
+}
+
+
+
+.clas2 {
+   
+   max-width: 300px;
+   border: 1px solid #D20A11;
+   background-color: #D20A11;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column; 
+   align-items: center;
+}
+
+.class_3 {
+
+   border: 1px solid #D20A11;
+   background-color: #D20A11;
+   border-radius: 5px;
+  
+}
+.class_4 {
+   
+
+   border: 1px solid #D20A11;
+   background-color: #D20A11;
+   border-radius: 5px;
+   margin: 0em 13em 0em 13em; 
+
+}
+
+.class_5 {
+
+   border: 1px solid #D20A11;
+   background-color: #D20A11;
+   border-radius: 5px;
+
+}
+
+.bottom3 a {
+   color: #EBE6D6;
+   text-decoration:none;
+}
+
+.clas3 {
+   
+   margin-left: auto;
+   padding-left: 10px;
+   margin-top: -20px;
+   /* margin-bottom: auto; */ 
+   max-width: 200px;
+   height: 30px;
+   border: 1px solid #D20A11;
+   border-radius: 5px;
+   background-color: #D20A11;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.bottom4 a {
+
+   color: #EBE6D6;
+   text-decoration:none;
+}
+
+.bottom10 a {
+    color: #EBE6D6;
+    text-decoration: none;
+
+   }
+
+.bottom20 a {
+    color: #EBE6D6;
+    text-decoration: none;
+       } 
+
+.bottom30 a {
+    color: #EBE6D6; 
+    text-decoration: none;
+   }     
+
+@media (max-width: 1164px) {
+   .frame2 {
+      height: 3em;}
+
+   .bottom {
+       display: none;
+   }   
+
+   .clas2 {
+       display: none;
+   }
+
+   .clas3 {
+   
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 10px;
+   margin-top: -20px;
+   /* margin-bottom: auto; */ 
+   max-width: 200px;
+   height: 30px;
+   border: 1px solid #D20A11;
+   border-radius: 5px;
+   background-color: #D20A11;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+}
+@media (max-width: 648px) {
+   h2 {
+       font-size: 15px;
+   }
+
+   .bottom1 {
+       width: 120px;
+   }
+    h3 {
+       font-size: 20px;
+    }
+
+   h4 {
+       font-size: 15px;
+   } 
+
+   .frame {
+       min-width: 87em;
+   }
+}
+
+   /* max-height: fit-content; */
+   /* max-width: fit-content; */
+
+   /* margin-left: 44px;
+   width: 1550px;	height: 120px;
+   outline: 2px solid #163E6C;
+   border-radius: 5px; 
+   bottom: 3px;
+   margin-bottom: 1cm;
+   padding: 10px; 
+   border: #D20A11 20px;}
+
+} */
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+}
+
+         </style>
+
+      
+</head>
+
+<header>
+    <div class="frame_1">
+    <div class='div-elements'>
+        <div class="logo-l">
+           <img src="{% static 'images/Fon.png' %}">
+       </div>
+       <div class='1class'><bottom class='bottom'><a href="https://t.me/NikName">+7-8352-20-12-09, telegramm</a>
+           </bottom>
+      
+       <div class='3class'><bottom class='bottom1'><a href="/sign/logout/">Выйти</a>
+            </bottom>
+       </div>
+       <div class='h2'><h2>Электронная сервисная книжка "Мой Силант"</h2>
+       </div>
+    </div>
+</div>
+</header>
+
+<body>
+
+<div class="frame">
+    <br>
+    <div>
+       <div class="author1"><h3>Клиент | сервисная компания: {{ request.user.username }} ID={{ request.user.id }}</h3>
+    </div>
+    <div class='h21'><h3>Прoверьте комплектацию и технические характеристики техники "Силант"</h3>
+        <br>
+      <form action="{% url 'search_clients' %}" method="get">
+        <input name="qc" type="Autocomplete" placeholder="Введите заводской номер" title="Вводить только число!" required>
+        <button type="submit">Поиск</button>
+      </form>
+    </div>
+    <div class='h22'>
+        <h4>Информация о комплектации и технических характеристиках Вашей техники</h4>
+    </div> 
+    <br>,
+    <ul class="author2">
+
+       <li class='class_3'><bottom class='bottom10'><a href="/sign/logout/">Общая информация</a>
+        
+       </li>
+       <li class='class_4'><bottom class='bottom20'><a href="/sign/logout/">Тех. обслуживание</a>
+           </bottom>
+        </li>
+       <li class='class_5'><bottom class='bottom30'><a href="/sign/logout/">   Рекламации   </a>
+           </bottom>
+        </li>
+    </ul>
+ 
+        
+        <br>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                {% block content %}
+                {{ flatpage.content }}
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+    
+    <p></p>
+    <p></p>
+</div>
+
+</body>
+
+<footer>
+<div class="frame2">
+    
+        <div class='clas2'>
+            <bottom class='bottom3'><a href="https://t.me/NikName">+7-8352-20-12-09, telegramm</a>
+            </bottom>
+        </div>
+        <div class='clas3'>
+            <bottom class='bottom4'><a href="https://silant.com/">Мой Силант 2023</a>
+            </bottom>
+       </div>
+    
+</div>
+</footer>
+    <div>
+           <a style="position: relative; left: 6em; top: -28px">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Shiryaev Konstantin
+    </div>
+
+
+
+
+</html>
+    <!-- <body>
+        Responsive navbar-->
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+   <div class="container">
+       <a class="navbar-brand" href="#">Мой Силант</a>
+       <p>{{ request.user.username }}</p>
+       <a class="btn btn-secondary" href="/sign/logout/" role="button">Выйти из аккаунта</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse"
+               data-target="#navbarResponsive"
+               aria-controls="navbarResponsive" aria-expanded="false"
+               aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button> -->
+
+
+       
+       
+       <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+               <li class="nav-item active">
+                   <a class="nav-link" href="/home/">Домашняя
+                       <span class="sr-only"></span>
+                   </a>
+               </li>
+               
+               <li class="nav-item">                
+                   <a class="nav-link" href="index">Машины</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="technique_model">Модель машины</a>
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href="engine_model">Модель двигателя</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="transmission_model">Модель трансмиссии</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="drive_axle_model">Модель в/моста</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="steerable_axle_model">Модели у/моста</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="service_company">Сервисные компании</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="technical_mintenance">ТО</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="type_of_maintenance">Тип ТО</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="broken_unit">Отказавший узел</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="complaints">Написать рекламацию</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/car_list">Мои машины</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tm_list">ТО машин</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="complaints_list">Все рекламации</a>
+            </li>
+            
+           </ul>
+       </div>
+   </div>
+</nav> -->
+
+        <!-- Bootstrap core JS-->
+    <!-- </body> -->
+</html>

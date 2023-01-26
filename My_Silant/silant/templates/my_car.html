@@ -1,0 +1,105 @@
+{% extends 'default2.html' %}
+ 
+    
+    {% block title %}
+          Car
+    {% endblock title %}
+    
+    {% block content %}
+
+
+           <table class="table table-striped">
+            <thead>
+               <tr>
+                   <th scope="col">Название</th>
+                   <th scope="col">Заводской №</th>
+                   <th scope="col">Модель техники</th>
+                   <th scope="col">М/т описание</th>
+                   <th scope="col">Модель двигателя</th>
+                   <th scope="col">М/д описание</th>
+                   <th scope="col">№ двигателя</th>
+                   <th scope="col">Модель трансмиссии</th>
+                   <th scope="col">М/т описание</th>
+                   <th scope="col">№ трансмиссии</th>
+                   <th scope="col">Модель ведущего моста</th>
+                   <th scope="col">Мод. в/м  описание</th>
+                   <th scope="col">№ ведущего моста</th>
+                   <th scope="col">Модель управляемого моста</th>
+                   <th scope="col">Мод. у/м описание</th>
+                   <th scope="col">№ управляемого моста</th>
+                   <th scope="col">Договор поставки №, дата</th>
+                   <th scope="col">Дата отгрузки с завода</th>
+                   <th scope="col">Грузополучатель</th>
+                   <th scope="col">Адрес поставки (эксплуатации)</th>
+                   <th scope="col">Комплектация (доп. опции)</th>
+                   <th scope="col">Клиент</th>
+                   <th scope="col">Сервисная компания</th>
+ 
+                     
+               </tr>
+            </thead>
+            <tbody>
+                  
+                          
+               <tr>
+                   <th scope="row">{{ car.name }}</th>
+                   <th scope="row">{{ car.factory_number }}</th>
+                   <th scope="row">{{ car.technique_model }}</th>
+                   <th scope="row">{{ car.technique_model.description }}</th>
+                   <th scope="row">{{ car.engine_model }}</th>
+                   <th scope="row">{{ car.engine_model.description }}</th>
+                   <th scope="row">{{ car.engine_number }}</th>
+                   <th scope="row">{{ car.transmission_model }}</th>
+                   <th scope="row">{{ car.transmission_model.description }}</th>
+                   <th scope="row">{{ car.transmission_number }}</th>
+                   <th scope="row">{{ car.drive_axle_model }}</th>
+                   <th scope="row">{{ car.drive_axle_model.description }}</th>
+                   <th scope="row">{{ car.drive_axle_number }}</th>
+                   <th scope="row">{{ car.steerable_axle_model }}</th>
+                   <th scope="row">{{ car.steerable_axle_model.description }}</th>
+                   <th scope="row">{{ car.steerable_axle_number}}</th>
+                   <th scope="row">{{ car.supply_contract }}</th>
+                   <th scope="row">{{ car.date_of_shipment_from_the|date:'d M Y' }}</th>
+                   <th scope="row">{{ car.consignee }}</th>
+                   <th scope="row">{{ car.delivery_address }}</th>
+                   <th scope="row">{{ car.equipment }}</th>
+                   <th scope="row">{{ car.client }}</th>
+                   <th scope="row">{{ car.service_company }}</th>
+               </tr>
+            </tbody>
+           </table>
+           
+     
+       
+       
+       <!-- <div class="d-grid gap-3 col-3 mx-auto">
+       
+       </div> -->
+
+    <!-- {% if is_paginated %}-->
+ 
+    <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+    <!-- {% if page_obj.has_previous %}
+        <a href="?page=1">Начало</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+    {% endif %}
+  --> 
+    <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+    <!-- {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+ 
+    Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+    <!-- {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Далее</a>
+    {% endif %}
+ 
+{% endif %} -->
+   
+ 
+{% endblock content %}

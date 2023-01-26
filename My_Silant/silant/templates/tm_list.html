@@ -1,0 +1,128 @@
+{% extends 'default2.html' %}
+ 
+    
+    {% block title %}
+          Cars
+    {% endblock title %}
+    
+    {% block content %}
+       
+<h3>Информация опроведённых ТО Вашей техники</h3>
+
+       <hr>
+       {% if tm %}
+       <!-- Перед таблицей добавим форму для поиска -->
+       <h4>Быстрый поиск</h4>
+       <p></p>
+       <form method="GET">
+        {{ filter.form }} <!-- Форму от фильтров за нас сделает django. А вот кнопку, увы придётся делать самому -->
+        <p></p>
+        
+        <input type="submit" value="Найти">
+        </form>
+<p></p>
+           <table class="table table-striped">
+            <thead>
+               <tr>
+                   <th scope="col">Название</th>
+                   <th scope="col">№ двигателя</th>
+                   <th scope="col">Машина</th>
+                   <th scope="col">Тип ТО</th>
+                   <th scope="col">Дата проведения ТО</th>
+                   <th scope="col">Наработка м/ч</th>
+                   <th scope="col">№ заказ-наряда</th>
+                   <th scope="col">Дата заказ-наряда</th>
+                   <th scope="col">Сервисная компания</th>
+                   <!-- <th scope="col">№ двигателя</th> -->
+                   
+                   <!-- <th scope="col">№ ведущего моста</th>
+                   <th scope="col">Модель управляемого моста</th>
+                   <th scope="col">№ управляемого моста</th>
+                   <th scope="col">Договор поставки №, дата</th>
+                   <th scope="col">Дата отгрузки с завода</th>
+                   <th scope="col">Грузополучатель</th>
+                   <th scope="col">Адрес поставки (эксплуатации)</th>
+                   <th scope="col">Комплектация (доп. опции)</th>
+                   <th scope="col">Клиент</th>
+                   <th scope="col">Сервисная компания</th> -->
+ 
+                     
+               </tr>
+            </thead>
+            <tbody>
+                  
+            
+              
+               <!-- Для каждого товара будете генерироваться новая строчка,
+    
+               т.е. новый HTML код, который указан в теле цикла.
+               При этом сам цикл работает точно так же, как и в Python.
+               product — переменная цикла, т.е. наш товар полученный из списка -->
+               {% for technicalmintenance in filter.qs %}
+               
+               <tr>
+                  
+                   <th scope="row">{{ technicalmintenance.name|truncatechars:7 }}</th>
+                   <th scope="row">
+                    <a href="{% url 'tm_detail' technicalmintenance.id %}" class="link-dark">{{ technicalmintenance.car.engine_number|truncatechars:7 }}</a>
+                    </th>
+                   <th scope="row">{{ technicalmintenance.car.name }}</th>
+                   <th scope="row">{{ technicalmintenance.type_of_maintenance|truncatechars:7 }}</th>
+                   <th scope="row">{{ technicalmintenance.date_of_maintenance|date:'d M Y' }}</th>
+                   <th scope="row">{{ technicalmintenance.оperating_time }}</th>
+                   <th scope="row">{{ technicalmintenance.order|truncatechars:7 }}</th>
+                   <th scope="row">{{ technicalmintenance.date_of_the_order|date:'d M Y' }}</th>
+                   <th scope="row">{{ technicalmintenance.service_company|truncatechars:7 }}</th>
+                   <!-- <th scope="row">{{ technicalmintenance.car.engine_number|truncatechars:7 }}</th> -->
+                  <!-- <th scope="row">{{ car.steerable_axle_model|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.steerable_axle_number|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.supply_contract|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.date_of_shipment_from_the|date:'d M Y' }}</th>
+                   <th scope="row">{{ car.consignee|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.delivery_address|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.equipment|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.client|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.service_company|truncatechars:7 }}</th> --> 
+               </tr>
+               {% endfor %}
+            </tbody>
+           </table>
+           
+       {% else %}
+
+           <h2>Машин в базе нет!</h2>
+    
+       {% endif %}
+       
+       
+       <!-- <div class="d-grid gap-3 col-3 mx-auto">
+       
+       </div> -->
+
+    <!-- {% if is_paginated %}-->
+ 
+    <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+    <!-- {% if page_obj.has_previous %}
+        <a href="?page=1">Начало</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+    {% endif %}
+  --> 
+    <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+    <!-- {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+ 
+    Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+    <!-- {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Далее</a>
+    {% endif %}
+ 
+{% endif %} -->
+   
+ 
+{% endblock content %}

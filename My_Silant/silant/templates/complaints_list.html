@@ -1,0 +1,133 @@
+{% extends 'default.html' %}
+ 
+    
+    {% block title %}
+          Complaints
+    {% endblock title %}
+    
+    {% block content %}
+       
+<h1>Рекламации</h1>
+<h3>{{ time_now }}</h3>
+<h4>У меня {{ comp_list|length }} рекламаций.</h4>
+       <hr>
+       {% if comp_list %}
+       <!-- Перед таблицей добавим форму для поиска -->
+       <h4>Быстрый поиск</h4>
+       <p></p>
+       <form method="GET">
+        {{ filter.form }}
+        <p></p>
+        
+        <input type="submit" value="Найти">
+        </form> 
+
+           <table class="table table-striped">
+            <thead>
+               <tr>
+                   <th scope="col">Название</th>
+                   <th scope="col">Дата отказа</th>
+                   <th scope="col">Наработка м/ч</th>
+                   <th scope="col">Узел отказа</th>
+                   <th scope="col">Описание отказа</th>
+                   <th scope="col">Способ восстановления</th>
+                   <th scope="col">Используемые запасные части</th>
+                   <th scope="col">Дата восстановления</th>
+                   <th scope="col">Сервисная компания</th>
+                   <th scope="col">Mашина</th>
+                   <th scope="col">Время простоя</th>
+                     
+               </tr>
+            </thead>
+            <tbody>
+                  
+            
+              
+               <!-- Для каждого товара будете генерироваться новая строчка,
+    
+               т.е. новый HTML код, который указан в теле цикла.
+               При этом сам цикл работает точно так же, как и в Python.
+               product — переменная цикла, т.е. наш товар полученный из списка -->
+               {% for complaints in filter.qs %}
+               
+               <tr><th scope="row">
+                <a href="{% url 'comp_detail' complaints.id %}" class="link-dark">{{ complaints.name|truncatechars:7 }}</a>
+                </th>
+                   
+                   <th scope="row">{{ complaints.date_of_breakdown|date:'d M Y' }}</th>
+                   <th scope="row">{{ complaints.оperating_time|truncatechars:7 }}</th>
+                   <th scope="row">{{ complaints.broken_unit|truncatechars:7 }}</th>
+                   <th scope="row">{{ complaints.breakdown_description|truncatechars:7 }}</th>
+                   <th scope="row">{{ complaints.recovery_method|truncatechars:7 }}</th>
+                   <th scope="row">{{ complaints.spare_parts|truncatechars:7 }}</th>
+                   <th scope="row">{{ complaints.date_restoration|date:'d M Y' }}</th>
+                   <th scope="row">{{ complaints.service_company|truncatechars:7 }}</th>
+                   <th scope="row">{{ complaints.car.car.name }}</th>
+                   <th scope="row">{{ carcomplaints.spare_parts|truncatechars:7 }}</th>
+
+
+
+
+
+
+
+
+                   <!-- <th scope="row">{{ car.technique_model|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.engine_model|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.engine_number|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.transmission_model|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.transmission_number|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.drive_axle_model|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.drive_axle_number|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.steerable_axle_model|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.steerable_axle_number|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.supply_contract|truncatechars:7 }}</th>
+                   
+                   <th scope="row">{{ car.consignee|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.delivery_address|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.equipment|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.client|truncatechars:7 }}</th>
+                   <th scope="row">{{ car.service_company|truncatechars:7 }}</th> -->
+               </tr>
+               {% endfor %}
+            </tbody>
+           </table>
+           
+       {% else %}
+
+           <h2>Машин в базе нет!</h2>
+    
+       {% endif %}
+       
+       
+       <!-- <div class="d-grid gap-3 col-3 mx-auto">
+       
+       </div> -->
+
+    <!-- {% if is_paginated %}-->
+ 
+    <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+    <!-- {% if page_obj.has_previous %}
+        <a href="?page=1">Начало</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+    {% endif %}
+  --> 
+    <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+    <!-- {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+ 
+    Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+    <!-- {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Далее</a>
+    {% endif %}
+ 
+{% endif %} -->
+   
+ 
+{% endblock content %}
